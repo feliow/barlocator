@@ -10,8 +10,8 @@
 	<a href="">BARS</a>
 	<a href="">FAVORITES</a>
 	<img src="img/logo.png">
-	<a href="">ABOUT US</a>
-	<a href="">CONTACTS</a>
+	<a href="about.php">ABOUT US</a>
+	<a href="contact.php">CONTACTS</a>
 	</div>
 </header>
 <body>
