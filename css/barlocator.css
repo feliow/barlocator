@@ -68,8 +68,8 @@ header img {
 .about h2 {
 	position: relative;
 	text-align: left;
-	color: black;
-	font-weight: 300;
+	color: red;
+	font-weight: 600;
 	font-family: helvetica;
 	padding: 10 10 10 10; 
 }
