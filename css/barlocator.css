@@ -89,7 +89,7 @@ header img {
 
 .contact p {
 	position: relative;
-	color: black;
+	color: red;
 	font-family: helvetica;
 	text-align: left;
 	font-weight: 300;
@@ -100,7 +100,7 @@ header img {
 .contact h2 {
 	position: relative;
 	text-align: left;
-	color: black;
+	color: red;
 	font-weight: 300;
 	font-family: helvetica;
 	padding: 10 10 10 10; 
