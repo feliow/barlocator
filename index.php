@@ -57,7 +57,7 @@
 
 				# Build the query. Users are allowed to search on title, author, or both
 
-				$query = "SELECT b.barID, name, favorite, area, day 
+				$query = "SELECT name, favorite, area, day 
             FROM Location AS l, Bars AS b, Openhours AS o, BLO AS blo
             WHERE blo.barID = b.barID AND blo.locationID = l.locationID AND blo.openID = o.openID";
 				if ($barname && !$location && !$open) { // name search only
@@ -70,7 +70,7 @@
 				    $query = $query . " where o.day like '%" . $open . "%'";
 				}
 				if ($barname && $location && $open) { // name and location and openhours search
-				    $query = $query . " where b.name like '%" . $barname . "%' and l.area like '%" . $location . "%' and o.day like '%" . $open . "%' ";
+				    $query = $query . " where b.name like '%" . $barname . "%' and l.area like '%" . $location . "%' and o.day like '%" . $open . "%'";
 				}
 
 				$stmt = $db->prepare($query);
@@ -87,7 +87,7 @@
 				}
 
 				    echo "<tr>";
-				    echo "<td> $name </td><td> $location </td><td>$openhours </td><td> $favorite </td>";
+				    echo "<td> $name </td><td> $location </td><td>$open </td><td> $favorite </td>";
 				    echo '<td><a href="favorites.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
 				    echo "</tr>";
 				}
