@@ -59,7 +59,7 @@
 
 				$query = "SELECT b.barID, name, favorite, area, day 
             FROM Location AS l, Bars AS b, Openhours AS o, BLO AS blo
-            WHERE blo.barID = b.barID AND blo.locationID = l.locationID AND blo.openID = o.openID;"
+            WHERE blo.barID = b.barID AND blo.locationID = l.locationID AND blo.openID = o.openID";
 				if ($barname && !$location && !$open) { // name search only
 				    $query = $query . " where b.name like '%" . $barname . "%'";
 				}
