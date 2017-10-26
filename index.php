@@ -14,9 +14,6 @@
 			  Location:<br>
 			  <input type="text" name="location" value="location">
 			  <br><br>
-			  Openhours:<br>
-			  <input type="text" name="open" value="open">
-			  <br><br>
 			  <input type="submit" value="Submit">
 			</form>  
 		</div>
@@ -28,23 +25,18 @@
 
 				$barname = "";
 				$location = "";
-				$open = "";
 
 				if (isset($_POST) && !empty($_POST)) {
 				# Get data from form
 				    $barname = trim($_POST['barname']);
 				    $location = trim($_POST['location']);
-					$open = trim($_POST['open']);
 				}
 
 				$barname = addslashes($barname);
 				$location = addslashes($location);
-				$open = addslashes($location);
-
 
 				$barname = htmlentities($barname);
 				$location = htmlentities($location);
-				$open = htmlentities($location);
 
 				# Open the database
 				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -57,24 +49,21 @@
 
 				# Build the query. Users are allowed to search on title, author, or both
 
-				$query = "SELECT name, favorite, area, day 
-            FROM Location AS l, Bars AS b, Openhours AS o, BLO AS blo
-            WHERE blo.barID = b.barID AND blo.locationID = l.locationID AND blo.openID = o.openID";
-				if ($barname && !$location && !$open) { // name search only
+				$query = "SELECT name, favorite, day, area 
+            FROM Location AS l, Bars AS b, BLO AS blo
+            WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
+				if ($barname && !$location) { // name search only
 				    $query = $query . " where b.name like '%" . $barname . "%'";
 				}
-				if (!$barname && $location && !$open) { // location search only
+				if (!$barname && $location) { // location search only
 				    $query = $query . " where l.area like '%" . $location . "%'";
 				}
-				if (!$barname && !$location && $open) { // openhours search only
-				    $query = $query . " where o.day like '%" . $open . "%'";
-				}
-				if ($barname && $location && $open) { // name and location and openhours search
-				    $query = $query . " where b.name like '%" . $barname . "%' and l.area like '%" . $location . "%' and o.day like '%" . $open . "%'";
+				if ($barname && $location) { // name and location and openhours search
+				    $query = $query . " where b.name like '%" . $barname . "%' and l.area like '%" . $location . "%'";
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result($name, $favorite, $area, $day);
+				$stmt->bind_result($barID, $name, $favorite, $day, $area);
 				$stmt->execute();
 				echo '<table>';
 				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
@@ -87,8 +76,8 @@
 				}
 
 				    echo "<tr>";
-				    echo "<td> $name </td><td> $location </td><td>$open </td><td> $favorite </td>";
-				    echo '<td><a href="favorites.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
+				    echo "<td> $name </td><td> $favorite </td><td> $day </td><td>$area </td>";
+				   	echo '<td><a href="favorites.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";
