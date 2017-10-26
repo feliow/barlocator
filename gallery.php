@@ -9,7 +9,7 @@
                 echo "Upload a picture: ";
                 echo '<a class="return" href="SQLInjections.php">click here</a>';
                 echo '<br/>';
-     $files = glob("uploadedfiles/*.*");
+     $files = glob("gallery/*.*");
      for ($i=0; $i<count($files); $i++)
       {
         $image = $files[$i];
