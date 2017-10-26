@@ -20,7 +20,7 @@
 //
 //    }
 
-@ $db = new mysqli('localhost', 'root', '', 'Book Club Library');
+@ $db = new mysqli('localhost', 'root', '', 'baruser');
 
 if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;
@@ -87,7 +87,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             } else {
                 echo '<h2>Welcome! Correct password.</h2>';
                 echo "Welcome, follow this link to upload a picture:";
-                echo '<a href="fileUpload.php">link</a>';
+                echo '<a href="uploadedfiles/fileUpload.php">link</a>';
             }
         }
         ?>
