@@ -87,7 +87,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             } else {
                 echo '<h2>Welcome! Correct password.</h2>';
                 echo "Welcome, follow this link to upload a picture:";
-                echo '<a href="uploadedfiles/fileUpload.php">link</a>';
+                echo '<a href="uploadafile.php">link</a>';
             }
         }
         ?>

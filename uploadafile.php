@@ -101,7 +101,7 @@ if (isset($_FILES['upload'])){
         #But, before we do so it will be good to do all of the ABOVE written first
         #We check for errors that might disturb our code, and try to avoid them
         #if there are no errrors move the file to the desired file location
-        move_uploaded_file($_FILES['upload']['tmp_name'], "uploadedfiles/{$_FILES['upload']['name']}");     
+        move_uploaded_file($_FILES['upload']['tmp_name'], "gallery/{$_FILES['upload']['name']}");     
     }
     
 }
@@ -129,7 +129,7 @@ if (isset($_FILES['upload'])){
                            #here we give the user the chance to check the file right away. 
                            #this is just for testing purposes so we can see the file is there
                            #when the user clicks, it will open the folder "uploadedfiles" and look for filename
-                           echo '<a href="uploadedfiles/' . $_FILES['upload']['name'] . '">Check file';
+                           echo '<a href="gallery/' . $_FILES['upload']['name'] . '">Check file';
                            
                        } else {
                            #else, if there was an error, then it simply goes through the error array
@@ -156,6 +156,5 @@ if (isset($_FILES['upload'])){
                        <input  type="submit" value="submit" />
                    </form>                   
                </div>
-                   <?php include("footer.php"); ?>
 </body>
 </html>
