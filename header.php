@@ -11,7 +11,7 @@
 			<a href="index.php">BARS</a>
 			<a href="favorites.php" class="fav">FAVORITES</a>
 			<a href="about.php" class="abo">ABOUT US</a>
-			<a href="contact.php">CONTACTS</a>
+			<a href="gallery.php">GALLERY</a>
 			<div class="himg"><img src="img/logo.png"></div>
 	</div>
 </header>
