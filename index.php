@@ -9,10 +9,10 @@
 		<div id="browse">
 			<form action="index.php" method="POST">
 			  Bar-name:<br>
-			  <input type="text" name="barname" value="name">
+			  <input type="text" name="barname" value="">
 			  <br><br>
 			  Location:<br>
-			  <input type="text" name="location" value="location">
+			  <input type="text" name="location" value="">
 			  <br><br>
 			  <input type="submit" value="Submit">
 			</form>  
@@ -20,14 +20,11 @@
 
 
 	<?php
-				# This is the mysqli version
-
 
 				$barname = "";
 				$location = "";
 
 				if (isset($_POST) && !empty($_POST)) {
-				# Get data from form
 				    $barname = trim($_POST['barname']);
 				    $location = trim($_POST['location']);
 				}
@@ -38,7 +35,6 @@
 				$barname = htmlentities($barname);
 				$location = htmlentities($location);
 
-				# Open the database
 				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 				if ($db->connect_error) {
@@ -47,23 +43,21 @@
 				    exit();
 				}
 
-				# Build the query. Users are allowed to search on title, author, or both
-
-				$query = "SELECT name, favorite, day, area 
+				$query = "SELECT name, area, day, favorite
             FROM Location AS l, Bars AS b, BLO AS blo
             WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
 				if ($barname && !$location) { // name search only
-				    $query = $query . " where b.name like '%" . $barname . "%'";
+				    $query = $query . " AND name like '%" . $barname . "%'";
 				}
 				if (!$barname && $location) { // location search only
-				    $query = $query . " where l.area like '%" . $location . "%'";
+				    $query = $query . " AND area like '%" . $location . "%'";
 				}
 				if ($barname && $location) { // name and location and openhours search
-				    $query = $query . " where b.name like '%" . $barname . "%' and l.area like '%" . $location . "%'";
+				    $query = $query . " AND name like '%" . $barname . "%' and area like '%" . $location . "%'";
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result($barID, $name, $favorite, $day, $area);
+				$stmt->bind_result($name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
 				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
@@ -76,7 +70,7 @@
 				}
 
 				    echo "<tr>";
-				    echo "<td> $name </td><td> $favorite </td><td> $day </td><td>$area </td>";
+				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
 				   	echo '<td><a href="favorites.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
 				    echo "</tr>";
 				}
