@@ -23,7 +23,9 @@
 				    exit();
 				}
 
-				$query = " select name, area, openhours, favorite from Bar where favorite is true";
+				$query ="SELECT name, area, day, favorite
+           				FROM Location, Bars, BLO
+           				WHERE favorite is true";
 				if ($barname && !$location) { // name search only
 				    $query = $query . " where name like '%" . $barname . "%'";
 				}
