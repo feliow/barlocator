@@ -40,7 +40,7 @@
 				$stmt->bind_result($name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
-				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
+				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>No more fav!</td></b> </tr>';
 				while ($stmt->fetch()) {
 					if ($favorite == 1) {
 						$favorite = "YES";
@@ -48,7 +48,7 @@
 	
 				    echo "<tr>";
 				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="index.php?barID=' . urlencode($barID) . '"> No more fav </a></td>';
+				   	echo '<td><a href="index.php?barID=' . urlencode($barID) . '"> favorite </a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";

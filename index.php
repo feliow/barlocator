@@ -71,7 +71,7 @@
 
 				    echo "<tr>";
 				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="favorites.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
+				   	echo '<td><a href="favbars.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";
