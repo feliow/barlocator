@@ -135,3 +135,49 @@ table td {
 	font-weight: 300;
 	font-family: Raleway;
 }
+
+/* Gallery */
+
+.bild {
+	padding: 10px;
+		
+}
+
+#gallery {
+	width: 1200px;
+	text-align: center;
+	color: white;
+	font-family: Raleway;
+}
+
+#gallery, a {
+	font-family: Raleway;
+	text-decoration: none;
+	color: white;
+}
+
+#gallery, a:hover {
+	color:#f7b406;
+}
+
+#form {
+	color:#f7b406;
+	font-family: Raleway;
+	text-align: center;
+
+}
+
+#login {
+	width: 320px;
+	color: white;
+	font-family: Raleway;
+}
+
+#upload {
+	text-align: center;
+	color:#f7b406;
+	font-family: Raleway;
+	text-align: center;
+
+}
+
