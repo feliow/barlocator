@@ -1,3 +1,4 @@
+
 <?php
 
 /* 
@@ -51,7 +52,6 @@ if (isset($_POST['username'], $_POST['userpass'])) {
     
     #just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
     
-    echo "SELECT * FROM user WHERE username = '{$uname}' AND userpass = '{$upass}'";
     
     $query = ("SELECT * FROM user WHERE username = '{$uname}' "."AND userpass = '{$upass}'");
 
@@ -70,14 +70,15 @@ if (isset($_POST['username'], $_POST['userpass'])) {
 }
 ?>
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
+<head>
+
+</head>
+
+<body id="form">
+<?php include("header.php"); ?>
+
+        <div id="login" ><?php
         
         
         
@@ -86,7 +87,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
                 echo '<h2>You got it wrong. Can\'t break in here!</h2>';
             } else {
                 echo '<h2>Welcome! Correct password.</h2>';
-                echo "Welcome, follow this link to upload a picture:";
+                echo "Follow this link to upload a picture: ";
                 echo '<a href="uploadafile.php">link</a>';
             }
         }
@@ -96,5 +97,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             <input type="password" name="userpass">
             <input type="submit" value="Go">
         </form>
+        </div>
 
     </body>
+    </html>

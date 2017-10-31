@@ -10,7 +10,6 @@
 <?php include("header.php"); ?>
 <?php
 
-
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -84,7 +83,7 @@ if (isset($_FILES['upload'])){
     #it is also good to think about the size of the file you want to accept.
     #this is for images, so how big of an image would you like to accept?
     #this is in bytes, and 1000000 is actually 1 mb which is now our limit
-    if($_FILES['upload']['size'] > 1000000){
+    if($_FILES['upload']['size'] > 10000000){
         
         $error[]='The file exceeded the upload limit';
     }
@@ -101,7 +100,7 @@ if (isset($_FILES['upload'])){
         #But, before we do so it will be good to do all of the ABOVE written first
         #We check for errors that might disturb our code, and try to avoid them
         #if there are no errrors move the file to the desired file location
-        move_uploaded_file($_FILES['upload']['tmp_name'], "gallery/{$_FILES['upload']['name']}");     
+        move_uploaded_file($_FILES['upload']['tmp_name'], "uploadedfiles/{$_FILES['upload']['name']}");     
     }
     
 }
@@ -129,7 +128,7 @@ if (isset($_FILES['upload'])){
                            #here we give the user the chance to check the file right away. 
                            #this is just for testing purposes so we can see the file is there
                            #when the user clicks, it will open the folder "uploadedfiles" and look for filename
-                           echo '<a href="gallery/' . $_FILES['upload']['name'] . '">Check file';
+                           echo '<a href="uploadedfiles/' . $_FILES['upload']['name'] . '">Check file';
                            
                        } else {
                            #else, if there was an error, then it simply goes through the error array
@@ -151,10 +150,15 @@ if (isset($_FILES['upload'])){
                -->
                <div>
                    
-                   <form action="" method="POST" enctype="multipart/form-data">
+                   <form id="upload" action="" method="POST" enctype="multipart/form-data">
                        <input type="file" name="upload" /></br>
-                       <input  type="submit" value="submit" />
-                   </form>                   
+                       <input type="submit" value="submit" />
+                   </form>          
+                   <a id="upload" href="gallery.php">Watch your gallery</a>         
                </div>
-</body>
+           </body>
+    
+    
+    
+    
 </html>
