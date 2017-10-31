@@ -20,13 +20,8 @@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
    echo "You are reserving book with the ID:"           .$barID;
 
     // Prepare an update statement and execute it
-<<<<<<< HEAD
     $stmt = $db->prepare("UPDATE BLO SET favorite=1 WHERE barID = ?");
     $stmt->bind_param('i', $barID);
-=======
-    $stmt = $db->prepare("UPDATE Bars SET favorite=1 WHERE barID = '?'");
-    $stmt->bind_param('s', $barID);
->>>>>>> 0f740edd47cb648fd8834abe64afc9110c92ff77
     $stmt->execute();
     printf("<br>Book Reserved!");
     printf("<br><a href=index.php>Search and Book more Books </a>");

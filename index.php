@@ -43,11 +43,7 @@
 				    exit();
 				}
 
-<<<<<<< HEAD
 				$query = "SELECT b.barID, name, area, day, favorite
-=======
-				$query = "SELECT barID, name, area, day, favorite
->>>>>>> 0f740edd47cb648fd8834abe64afc9110c92ff77
             FROM Location AS l, Bars AS b, BLO AS blo
             WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
 				if ($barname && !$location) { // name search only
@@ -64,7 +60,7 @@
 				$stmt->bind_result($barID, $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
-				echo '<tr><b><td>barID</td><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
+				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
 				while ($stmt->fetch()) {
 					if ($favorite == 0) {
 						$favorite = "NO";
@@ -74,13 +70,8 @@
 				}
 
 				    echo "<tr>";
-<<<<<<< HEAD
 				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
 				   	echo '<td><a href="favbars.php?barID= ' . ($barID) . '"> Favorite </a></td>';
-=======
-				    echo "<td> $barID </td><td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="favbars.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
->>>>>>> 0f740edd47cb648fd8834abe64afc9110c92ff77
 				    echo "</tr>";
 				}
 				echo "</table>";
