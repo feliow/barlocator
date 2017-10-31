@@ -23,7 +23,7 @@
 				    exit();
 				}
 
-				$query ="SELECT name, area, day, favorite
+				$query ="SELECT barID, name, area, day, favorite
            				FROM Location, Bars, BLO
            				WHERE favorite is true";
 				if ($barname && !$location) { // name search only
@@ -37,17 +37,17 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result($name, $area, $day, $favorite);
+				$stmt->bind_result($barID, $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
-				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>No more fav!</td></b> </tr>';
+				echo '<tr><b><td>BarID</td><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>No more fav!</td></b> </tr>';
 				while ($stmt->fetch()) {
 					if ($favorite == 1) {
 						$favorite = "YES";
 					}
 	
 				    echo "<tr>";
-				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
+				    echo "<td> $barID </td><td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
 				   	echo '<td><a href="index.php?barID=' . urlencode($barID) . '"> favorite </a></td>';
 				    echo "</tr>";
 				}

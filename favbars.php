@@ -17,11 +17,11 @@ $barID = addslashes($barID);
         exit();
     }
     
-   echo "You are reserving book with the ID:"           .$bookid;
+   echo "You are reserving book with the ID:"           .$barID;
 
     // Prepare an update statement and execute it
     $stmt = $db->prepare("UPDATE Bars SET favorite=1 WHERE barID = '?'");
-    $stmt->bind_param('i', $barID);
+    $stmt->bind_param('s', $barID);
     $stmt->execute();
     printf("<br>Book Reserved!");
     printf("<br><a href=index.php>Search and Book more Books </a>");
