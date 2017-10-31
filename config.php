@@ -1,5 +1,7 @@
 <?php 
-//$current_page = end(explode('/', $_SERVER['REQUEST_URI']));
+$url = $_SERVER['REQUEST_URI'];
+$strings = explode('/', $url);
+$current_page = end($strings);
 $dbname = 'barlocator';
 $dbuser = 'root';
 $dbpass = 'root';

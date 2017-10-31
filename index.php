@@ -35,7 +35,7 @@
 				$barname = htmlentities($barname);
 				$location = htmlentities($location);
 
-				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+				$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 				if ($db->connect_error) {
 				    echo "could not connect: " . $db->connect_error;
@@ -43,7 +43,7 @@
 				    exit();
 				}
 
-				$query = "SELECT name, area, day, favorite
+				$query = "SELECT b.barID, name, area, day, favorite
             FROM Location AS l, Bars AS b, BLO AS blo
             WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
 				if ($barname && !$location) { // name search only
@@ -57,7 +57,7 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result($name, $area, $day, $favorite);
+				$stmt->bind_result($barID, $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
 				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
@@ -71,7 +71,7 @@
 
 				    echo "<tr>";
 				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="favbars.php?barID=' . urlencode($barID) . '"> Favorite </a></td>';
+				   	echo '<td><a href="favbars.php?barID= ' . ($barID) . '"> Favorite </a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";
