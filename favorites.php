@@ -16,16 +16,17 @@
 				$location = addslashes($location);
 
 				$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-				
+
 				if ($db->connect_error) {
 				    echo "could not connect: " . $db->connect_error;
 				    printf("<br><a href=favorites.php>Return to home page </a>");
 				    exit();
 				}
 
-				$query ="SELECT b.barID, name, area, day, favorite
-           				FROM Location, Bars, BLO
-           				WHERE favorite is true";
+				$query ="SELECT name, area, day, favorite
+           				FROM Bars, Location, BLO
+           				WHERE Bars.favorite = 1 AND Bars.barID = BLO.barID AND Location.locationID = BLO.locationID";
+           				
 				if ($barname && !$location) { // name search only
 				    $query = $query . " where name like '%" . $barname . "%'";
 				}
@@ -37,7 +38,7 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result($barID, $name, $area, $day, $favorite);
+				$stmt->bind_result( $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
 				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>No more fav!</td></b> </tr>';

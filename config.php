@@ -6,4 +6,5 @@ $dbname = 'barlocator';
 $dbuser = 'root';
 $dbpass = '';
 $dbserver = 'localhost';
+error_reporting(-1);
 ?>
