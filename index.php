@@ -4,8 +4,12 @@
 	<div id="pagecontainer">
 		<div id="search">
 			<h1></h1>
-			<input type="text" name="search" placeholder="Search for the perfect bar for you...">
+			<form action="index.php" method="POST">
+			<input type="text" name="barname" placeholder="Search for the perfect bar for you...">
+			</form>
 		</div>
+
+
 		<div id="browse">
 			<form action="index.php" method="POST">
 			  Bar-name:<br>
@@ -44,8 +48,8 @@
 				}
 
 				$query = "SELECT b.barID, name, area, day, favorite
-            FROM Location AS l, Bars AS b, BLO AS blo
-            WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
+	            FROM Location AS l, Bars AS b, BLO AS blo
+	            WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
 				if ($barname && !$location) { // name search only
 				    $query = $query . " AND name like '%" . $barname . "%'";
 				}
@@ -60,23 +64,45 @@
 				$stmt->bind_result($barID, $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
-				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
+				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Favorite!</td></b> </tr>';
 				while ($stmt->fetch()) {
 					if ($favorite == 0) {
 						$favorite = "NO";
 					}
 					else {
 						$favorite = "YES";
+
 				}
 
 				    echo "<tr>";
-				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="favbars.php?barID= ' . ($barID) . '"> Favorite </a></td>';
+				    echo "<td> $name </td><td> $area </td><td> $day </td>";
+				   	echo '<td><a href="favorites.php?barID= ' . ($barID) . '">✔</a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";
 			?>
 
+			<?php // kod som tidigare låg i favbars.php
+
+			$barID = trim($_GET['barID']);
+			echo '<INPUT type="hidden" name="barID" value=' . $barID . '>';
+
+			$barID = trim($_GET['barID']);      // From the hidden field
+			$barID = addslashes($barID);
+
+			$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+			    if ($db->connect_error) {
+			        echo "could not connect: " . $db->connect_error;
+			        printf("<br><a href=index.php>Return to home page </a>");
+			        exit();
+			    }
+
+			    $stmt = $db->prepare("UPDATE Bars SET favorite=1 WHERE barID = ?");
+			    $stmt->bind_param('i', $barID);
+			    $stmt->execute();
+			    exit;
+			?>
 			</div>
 
 	</div>
