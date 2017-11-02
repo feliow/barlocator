@@ -24,7 +24,7 @@
 				    exit();
 				}
 
-				$query ="SELECT Bars.barID, name, area, day, favorite
+				$query ="SELECT Bars.barID, name, area, address, day, homepage, favorite
            				FROM Bars, Location, BLO
            				WHERE Bars.favorite = 1 AND Bars.barID = BLO.barID AND Location.locationID = BLO.locationID";
            				
@@ -39,21 +39,24 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result( $barID, $name, $area, $day, $favorite);
+				$stmt->bind_result( $barID, $name, $area, $address, $day, $homepage, $favorite);
 				$stmt->execute();
-				echo '<table>';
-				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>No more fav!</td></b> </tr>';
+				echo '<div>';
 				while ($stmt->fetch()) {
 					if ($favorite == 1) {
 						$favorite = "YES";
 					}
 	
-				    echo "<tr>";
-				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="nofavorite.php?barID=' . ($barID) . '"> no favorite </a></td>';
-				    echo "</tr>";
+				   	echo "<div id='favdiv'>";
+				    echo "<h3> $name </h3>
+				    <p><b>Where?</b></br> $area </p>
+				    <p><b>Address</b></br> $address </p>
+				    <p><b>When?</b></br> $day </p>
+				    <p><b>Homepage!</b></br><a href=$homepage> $homepage </a></p>";
+				   	echo '<a href="bars.php?barID= ' . ($barID) . '">Not good? 💔</a>';
+				    echo "</div>";
 				}
-				echo "</table>";
+				echo "</div>";
 			 // kod som tidigare låg i favbars.php
 
 			$barID = trim($_GET['barID']);
