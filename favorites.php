@@ -6,6 +6,7 @@
 	<?php
 				$barname = "";
 				$location = "";
+				$barID = "";
 
 				if (isset($_POST) && !empty($_POST)) {
 				    $barname = trim($_POST['barname']);
@@ -23,7 +24,7 @@
 				    exit();
 				}
 
-				$query ="SELECT name, area, day, favorite
+				$query ="SELECT Bars.barID, name, area, day, favorite
            				FROM Bars, Location, BLO
            				WHERE Bars.favorite = 1 AND Bars.barID = BLO.barID AND Location.locationID = BLO.locationID";
            				
@@ -38,7 +39,7 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result( $name, $area, $day, $favorite);
+				$stmt->bind_result( $barID, $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
 				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>No more fav!</td></b> </tr>';
@@ -49,7 +50,7 @@
 	
 				    echo "<tr>";
 				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="index.php?barID=' . ($barID) . '"> favorite </a></td>';
+				   	echo '<td><a href="nofavorite.php?barID=' . ($barID) . '"> no favorite </a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";
