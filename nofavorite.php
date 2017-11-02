@@ -1,7 +1,10 @@
-<?include ("header.php");?>
-<?include ("config.php");?>
+<?
+include ("header.php");
+include ("config.php")
+?>
 
 <?php
+
 
 $barID = trim($_GET['barID']);
 echo '<INPUT type="hidden" name="barID" value=' . $barID . '>';
@@ -17,15 +20,20 @@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
         exit();
     }
     
-   echo "You are reserving book with the ID:"           .$barID;
+   echo $barID;
 
     // Prepare an update statement and execute it
-    $stmt = $db->prepare("UPDATE Bars SET favorite=1 WHERE barID = ?");
+    $stmt = $db->prepare("UPDATE Bars SET favorite=0 WHERE barID = ?");
     $stmt->bind_param('i', $barID);
     $stmt->execute();
-    printf("<br>Book Reserved!");
-    printf("<br><a href=index.php>Search and Book more Books </a>");
-    printf("<br><a href=favorites.php>Go to My Books </a>");
+    printf("<br>Succesfully returned!");
+    printf("<br><a href=browsebooks.php>Search and Book more Books </a>");
+    printf("<br><a href=mybooks.php>Return to Reserved Books </a>");
     printf("<br><a href=index.php>Return to home page </a>");
     exit;
+
 ?>
+
+    
+
+
