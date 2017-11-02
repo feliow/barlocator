@@ -21,7 +21,7 @@
 //
 //    }
 
-@ $db = new mysqli('localhost', 'root', '', 'baruser');
+$db = new mysqli('localhost', 'root', 'root', 'barlocator');
 
 if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;

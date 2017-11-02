@@ -9,10 +9,10 @@
 	</head>
 <header>
 	<div class="menu">
-			<a href="index.php">BARS</a>
+			<a href="bars.php">BARS</a>
 			<a href="favorites.php" class="fav">FAVORITES</a>
 			<a href="about.php" class="abo">ABOUT US</a>
 			<a href="SQLinjections.php">GALLERY</a>
-			<div class="himg"><img src="img/logo.png"></div>
+			<a href="index.php"><div class="himg"><img src="img/logo.png"></div></a>
 	</div>
 </header>

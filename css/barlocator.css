@@ -224,6 +224,35 @@ input[type=file] {
     font-size: 0px;
     margin-top: 20px;
 }
-
-
+#bardiv {
+	width: 150px;
+	background-color: rgba(255, 255, 255, 0.7);
+	display: inline-block;
+	margin: 10px;
+	padding: 2px;
+}
+h3{
+	font-family: Raleway;
+	text-align: center;
+}
+#bardiv p {
+	font-family: Helvetica;
+}
+#favdiv {
+	width: 50%;
+	background-color: rgba(255, 255, 255, 0.7);
+	display: inline-block;
+	margin: 10px;
+	padding: 2px 5px 10px 10px;
+	text-align: left;
+}
+#favdiv p {
+	font-family: Helvetica;
+}
+#favdiv a {
+	font-family: Helvetica;
+}
+#favdiv h3 {
+	font-size: 30px;
+}
 
