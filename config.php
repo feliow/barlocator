@@ -4,7 +4,7 @@ $strings = explode('/', $url);
 $current_page = end($strings);
 $dbname = 'barlocator';
 $dbuser = 'root';
-$dbpass = 'root';
+$dbpass = '';
 $dbserver = 'localhost';
 error_reporting(-1);
 ?>
