@@ -24,7 +24,7 @@
 				    exit();
 				}
 
-				$query ="SELECT  name, area, day, favorite
+				$query ="SELECT Bars.barID, name, area, day, favorite
            				FROM Bars, Location, BLO
            				WHERE Bars.favorite = 1 AND Bars.barID = BLO.barID AND Location.locationID = BLO.locationID";
            				
@@ -39,7 +39,7 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result( $name, $area, $day, $favorite);
+				$stmt->bind_result( $barID, $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
 				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>No more fav!</td></b> </tr>';
@@ -50,10 +50,30 @@
 	
 				    echo "<tr>";
 				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="nofav.php?barID=' . urlencode($barID) . '"> no favorite </a></td>';
+				   	echo '<td><a href="nofavorite.php?barID=' . ($barID) . '"> no favorite </a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";
+			 // kod som tidigare låg i favbars.php
+
+			$barID = trim($_GET['barID']);
+			echo '<INPUT type="hidden" name="barID" value=' . $barID . '>';
+
+			$barID = trim($_GET['barID']);      // From the hidden field
+			$barID = addslashes($barID);
+
+			$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+			    if ($db->connect_error) {
+			        echo "could not connect: " . $db->connect_error;
+			        printf("<br><a href=index.php>Return to home page </a>");
+			        exit();
+			    }
+
+			    $stmt = $db->prepare("UPDATE Bars SET favorite=1 WHERE barID = ?");
+			    $stmt->bind_param('i', $barID);
+			    $stmt->execute();
+			    exit;
 			?>
 		</div>
 

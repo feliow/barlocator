@@ -3,9 +3,13 @@
 <body>
 	<div id="pagecontainer">
 		<div id="search">
-			<h1>SEARCH</h1>
-			<input type="text" name="barname" name="location" placeholder="Search for the perfect bar for you...">
+			<h1></h1>
+			<form action="index.php" method="POST">
+			<input type="text" name="barname" placeholder="Search for the perfect bar for you...">
+			</form>
 		</div>
+
+
 		<div id="browse">
 			<form action="index.php" method="POST">
 			  Bar-name:<br>
@@ -44,8 +48,8 @@
 				}
 
 				$query = "SELECT b.barID, name, area, day, favorite
-            FROM Location AS l, Bars AS b, BLO AS blo
-            WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
+	            FROM Location AS l, Bars AS b, BLO AS blo
+	            WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
 				if ($barname && !$location) { // name search only
 				    $query = $query . " AND name like '%" . $barname . "%'";
 				}
@@ -60,18 +64,19 @@
 				$stmt->bind_result($barID, $name, $area, $day, $favorite);
 				$stmt->execute();
 				echo '<table>';
-				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Your fav...?</td><td>Make it your favorite!</td></b> </tr>';
+				echo '<tr><b><td>Barname</td><td>Location</td> <td>Openhours</td><td>Favorite!</td></b> </tr>';
 				while ($stmt->fetch()) {
 					if ($favorite == 0) {
 						$favorite = "NO";
 					}
 					else {
 						$favorite = "YES";
+
 				}
 
 				    echo "<tr>";
-				    echo "<td> $name </td><td> $area </td><td> $day </td><td>$favorite </td>";
-				   	echo '<td><a href="favbars.php?barID= ' . ($barID) . '"> Favorite </a></td>';
+				    echo "<td> $name </td><td> $area </td><td> $day </td>";
+				   	echo '<td><a href="favorites.php?barID= ' . ($barID) . '">✔</a></td>';
 				    echo "</tr>";
 				}
 				echo "</table>";
