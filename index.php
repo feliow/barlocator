@@ -3,8 +3,8 @@
 <body>
 	<div id="pagecontainer">
 		<div id="search">
-			<h1></h1>
-			<input type="text" name="search" placeholder="Search for the perfect bar for you...">
+			<h1>SEARCH</h1>
+			<input type="text" name="barname" name="location" placeholder="Search for the perfect bar for you...">
 		</div>
 		<div id="browse">
 			<form action="index.php" method="POST">

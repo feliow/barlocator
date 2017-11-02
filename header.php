@@ -3,6 +3,7 @@
 	<head>
 		<title>Barlocator</title>
 		<link rel="stylesheet" type="text/css" href="css/barlocator.css">
+		<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<meta charset="utf-8">
 	</head>
@@ -11,7 +12,7 @@
 			<a href="index.php">BARS</a>
 			<a href="favorites.php" class="fav">FAVORITES</a>
 			<a href="about.php" class="abo">ABOUT US</a>
-			<a href="gallery.php">GALLERY</a>
+			<a href="SQLinjections.php">GALLERY</a>
 			<div class="himg"><img src="img/logo.png"></div>
 	</div>
 </header>

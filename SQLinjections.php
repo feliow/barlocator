@@ -84,18 +84,18 @@ if (isset($_POST['username'], $_POST['userpass'])) {
         
         if (isset($totalcount)) {
             if ($totalcount == 0) {
-                echo '<h2>You got it wrong. Can\'t break in here!</h2>';
+                echo '<h2>You got it wrong. Try again</h2>';
             } else {
-                echo '<h2>Welcome! Correct password.</h2>';
-                echo "Follow this link to upload a picture: ";
-                echo '<a href="uploadafile.php">link</a>';
+                echo '<h1>Welcome</h1>';
+                echo '<a href="gallery.php">Watch Gallery</a>';
             }
         }
         ?>
+        <h1>LOG IN</h1>
         <form method="POST" action="">
             <input type="text" name="username">
-            <input type="password" name="userpass">
-            <input type="submit" value="Go">
+            <input type="password" name="userpass"></br></br>
+            <input type="submit" value="Go" >
         </form>
         </div>
 

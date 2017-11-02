@@ -23,6 +23,12 @@ header a {
 	text-align: center;
 	padding: 0px 50px;
 }
+
+h1 {
+	font-family: 'Anton', sans-serif;
+	font-size: 50px;
+}
+
 .fav {
 	margin-right: 80px;
 }
@@ -138,8 +144,17 @@ table td {
 
 /* Gallery */
 
+.background {
+	background-color: #FFFFFF61;
+	margin: auto;
+	width: 1100px;
+}
+
 .bild {
 	padding: 10px;
+	padding-bottom: 70px;
+	margin-top: 30px;
+	background-color: white;
 		
 }
 
@@ -160,6 +175,11 @@ table td {
 	color:#f7b406;
 }
 
+#pic {
+	display: inline;
+	padding: 5px;
+}
+
 #form {
 	color:#f7b406;
 	font-family: Raleway;
@@ -173,11 +193,37 @@ table td {
 	font-family: Raleway;
 }
 
-#upload {
+#up {
 	text-align: center;
 	color:#f7b406;
 	font-family: Raleway;
 	text-align: center;
 
 }
+
+input[type=submit] {
+    padding:20px 18px; 
+    background:#f7b406; 
+    border:0;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 35px; 
+    font-family: Raleway;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+input[type=file] {
+    padding:22px 7px; 
+    background:#f7b406; 
+    border:0;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 35px; 
+    font-size: 0px;
+    margin-top: 20px;
+}
+
+
 
