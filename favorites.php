@@ -24,7 +24,7 @@
 				    exit();
 				}
 
-				$query ="SELECT Bars.barID, name, area, address, day, homepage, favorite
+				$query ="SELECT Bars.barID, name, area, address, day, homepage, favorite, image
            				FROM Bars, Location, BLO
            				WHERE Bars.favorite = 1 AND Bars.barID = BLO.barID AND Location.locationID = BLO.locationID";
            				
@@ -39,7 +39,7 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result( $barID, $name, $area, $address, $day, $homepage, $favorite);
+				$stmt->bind_result( $barID, $name, $area, $address, $day, $homepage, $favorite, $image);
 				$stmt->execute();
 				echo '<div>';
 				while ($stmt->fetch()) {
@@ -53,6 +53,7 @@
 				    <p><b>Address</b></br> $address </p>
 				    <p><b>When?</b></br> $day </p>
 				    <p><b>Homepage!</b></br><a href=$homepage> $homepage </a></p>";
+				    echo '<img src="img/' . ($image) . '" >Aaaaaaaa</img>';
 				   	echo '<a href="bars.php?barID= ' . ($barID) . '">Not good? 💔</a>';
 				    echo "</div>";
 				}
@@ -76,7 +77,8 @@
 			    $stmt = $db->prepare("UPDATE Bars SET favorite=1 WHERE barID = ?");
 			    $stmt->bind_param('i', $barID);
 			    $stmt->execute();
-			    exit;
+			    
+			    header('favorites.php');
 			?>
 		</div>
 

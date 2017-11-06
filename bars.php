@@ -22,6 +22,7 @@
 				$barID = "";
 
 				if (isset($_POST) && !empty($_POST)) {
+
 				    $barname = trim($_POST['barname']);
 				    $location = trim($_POST['location']);
 				}
@@ -68,7 +69,7 @@
 
 				    echo "<div id='bardiv'>";
 				    echo "<h3> $name </h3><p><b>Where?</b></br> $area </p><p><b>When?</b></br> $day </p>";
-				   	echo '<a href="favorites.php?barID= ' . ($barID) . '">Sounds good?</br>❤️</a>';
+				   	echo '<a href="favorites.php?barID=' . ($barID) . '">Sounds good?</br>❤️</a>';
 				    echo "</div>";
 				}
 				echo "</div>";
@@ -76,11 +77,11 @@
 <?php
 
 
-$barID = trim($_GET['barID']);
-echo '<INPUT type="hidden" name="barID" value=' . $barID . '>';
+// $barID = trim($_POST['barID']);
+// echo '<INPUT type="hidden" name="barID" value=' . $barID . '>';
 
-$barID = trim($_GET['barID']);      // From the hidden field
-$barID = addslashes($barID);
+// $barID = trim($_POST['barID']);      // From the hidden field
+// $barID = addslashes($barID);
 
 $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -90,7 +91,7 @@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
         exit();
     }
     
-   echo $barID;
+   //echo $barID;
 
     // Prepare an update statement and execute it
     $stmt = $db->prepare("UPDATE Bars SET favorite=0 WHERE barID = ?");
