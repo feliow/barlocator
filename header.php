@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Barlocator</title>
+		<link rel="icon" type="image/png" href="css/icon.png"/>
 		<link rel="stylesheet" type="text/css" href="css/barlocator.css">
 		<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">

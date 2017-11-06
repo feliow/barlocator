@@ -19,6 +19,7 @@
 
 				$barname = "";
 				$location = "";
+				$barID = "";
 
 				if (isset($_POST) && !empty($_POST)) {
 				    $barname = trim($_POST['barname']);

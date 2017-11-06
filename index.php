@@ -3,7 +3,7 @@
 <body>
 	<div id="pagecontainer">
 		<div id="search">
-			<h1></h1>
+			<h1>SEARCH</h1>
 			<form action="bars.php" method="POST">
 			<input type="text" name="barname" placeholder="Search for the perfect bar for you...">
 			</form>

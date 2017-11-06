@@ -1,11 +1,10 @@
 html { 
    background: url("bgpic.jpg") repeat center center fixed; 
-	 -webkit-background-size: repeat;
-	 -moz-background-size: repeat;
-	 -o-background-size: repeat;
-	 background-size: 1000px;
+	
+	background-size: 1600px;
 	max-width: 100%;
 	margin: 0 auto;
+	
 }
 body {
 	position: relative;
@@ -30,7 +29,9 @@ header a {
 
 h1 {
 	font-family: 'Anton', sans-serif;
-	font-size: 50px;
+	font-size: 140px;
+	color: #075875;
+
 }
 
 .fav {
@@ -65,12 +66,15 @@ header img {
 	top: 150;
 	background-color: rgba(255, 255, 255, 0.7);
 	border: none;
-	margin: 70px 0 170px 0;
+	margin: 0px 0 170px 0;
 }
 #search {
 	margin-top: 100px;
 	margin-bottom: 100px;
 }
+
+
+
 #browse{
 	margin: 50px 0;
 	font-family: raleway;
