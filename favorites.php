@@ -1,5 +1,4 @@
 <?include ("header.php");?>
-<?include ("config.php");?>
 
 <div id="pagecontainer">
 		<div id="">
@@ -24,7 +23,7 @@
 				    exit();
 				}
 
-				$query ="SELECT Bars.barID, name, area, address, day, homepage, favorite
+				$query ="SELECT Bars.barID, name, area, address, day, agelimit, homepage, favorite
            				FROM Bars, Location, BLO
            				WHERE Bars.favorite = 1 AND Bars.barID = BLO.barID AND Location.locationID = BLO.locationID";
            				
@@ -39,7 +38,7 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result( $barID, $name, $area, $address, $day, $homepage, $favorite);
+				$stmt->bind_result( $barID, $name, $area, $address, $day, $agelimit, $homepage, $favorite);
 				$stmt->execute();
 				echo '<div>';
 				while ($stmt->fetch()) {
@@ -49,11 +48,16 @@
 	
 				   	echo "<div id='favdiv'>";
 				    echo "<h3> $name </h3>
-				    <p><b>Where?</b></br> $area </p>
-				    <p><b>Address</b></br> $address </p>
-				    <p><b>When?</b></br> $day </p>
-				    <p><b>Homepage!</b></br><a href=$homepage> $homepage </a></p>";
-				   	echo '<a href="bars.php?barID= ' . ($barID) . '">Not good? 💔</a>';
+				    <div class='fav'><h4>Where?</h4></br>
+				    <p> $area </p></div>
+				    <div class='fav'><h4>Address</h4></br>
+				    <p> $address </p></div>
+				    <div class='fav'><h4>When?</h4></br>
+				    <p> $day </p></br></div>
+				    <div class='fav'><h4>Age?</h4></br>
+				    <p> $agelimit </p></br></div>
+				    </br><div class='homepage'><p><b>COOL BAR? See more info on homepage!</b></br><a href=$homepage> $homepage </a></p></div>";
+				   	echo '<div class="nogood"><a href="bars.php?barID= ' . ($barID) . '">✗</a></div>';
 				    echo "</div>";
 				}
 				echo "</div>";

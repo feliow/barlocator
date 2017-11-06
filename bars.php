@@ -4,13 +4,13 @@
 	<div id="pagecontainer">
 		<div id="browse">
 			<form action="bars.php" method="POST">
-			  Bar-name:<br>
+			  NAME OF BAR<br>
 			  <input type="text" name="barname" value="">
 			  <br><br>
-			  Location:<br>
+			  OR, YOUR LOCATION<br>
 			  <input type="text" name="location" value="">
 			  <br><br>
-			  <input type="submit" value="Submit">
+			  <input class="submit" type="submit" value="Submit">
 			</form>  
 		</div>
 
@@ -67,7 +67,7 @@
 
 				    echo "<div id='bardiv'>";
 				    echo "<h3> $name </h3><p><b>Where?</b></br> $area </p><p><b>When?</b></br> $day </p>";
-				   	echo '<a href="favorites.php?barID= ' . ($barID) . '">Sounds good?</br>❤️</a>';
+				   	echo '<a href="favorites.php?barID= ' . ($barID) . '">✔</a>';
 				    echo "</div>";
 				}
 				echo "</div>";

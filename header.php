@@ -1,3 +1,4 @@
+<?php include("config.php");?>
 <DOCTYPE! html>
 <html>
 	<head>
@@ -8,11 +9,13 @@
 		<meta charset="utf-8">
 	</head>
 <header>
-	<div class="menu">
-			<a href="bars.php">BARS</a>
-			<a href="favorites.php" class="fav">FAVORITES</a>
-			<a href="about.php" class="abo">ABOUT US</a>
-			<a href="SQLinjections.php">GALLERY</a>
-			<a href="index.php"><div class="himg"><img src="img/logo.png"></div></a>
+	<div id="menu">
+		<a class="<?php echo ($current_page == 'bars.php' || $current_page == '') ? 'active' : NULL ?>" href="bars.php"> BARS</a>
+		<a class="<?php echo ($current_page == 'favorites.php' || $current_page == '') ? 'active' : NULL ?>" href="favorites.php">FAVORITES</a>
+		<a class="<?php echo ($current_page == 'about.php' || $current_page == '') ? 'active' : NULL ?>" href="about.php">ABOUT US</a>
+		<a class="<?php echo ($current_page == 'SQLinjections.php' || $current_page == '') ? 'active' : NULL ?>" href="SQLinjections.php">GALLERY</a>
+		<a href="index.php"><div class="himg"><img src="img/logo.png"></div></a>
 	</div>
 </header>
+
+	
