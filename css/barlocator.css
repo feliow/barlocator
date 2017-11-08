@@ -7,9 +7,13 @@ html {
 	 background-size: 2000px;
 }
 body {
-	position: relative;
 	min-width: 800px;
 }
+#pagecontainer{
+	text-align: center;
+}
+/* Header */
+
 header {
 	text-align: center;
 	height: 100px;
@@ -30,6 +34,16 @@ header a:hover{
 header img {
 	height: 150px;
 }
+#menu a.active {
+	color: #f7b406;
+}
+.himg {
+	margin-top: -60px;
+	text-align: left;
+	position: fixed;
+}
+/* Headlines */
+
 h1 {
 	font-family: 'Anton', sans-serif;
 	font-size: 50px;
@@ -41,19 +55,9 @@ h3{
 	color: white;
 	text-transform: uppercase;
 }
-#menu a.active {
-	color: orange;
-}
-.himg {
-	margin-top: -60px;
-	text-align: left;
-	position: fixed;
-}
-#pagecontainer {
-	position: relative;
-	max-width: 100%;
-	text-align: center;
-}
+
+/* search on index.php */
+
 #search input {
 	width: 500px;
 	height: 50px;
@@ -69,6 +73,9 @@ h3{
 	margin-top: 100px;
 	margin-bottom: 100px;
 }
+
+/* search on bars.php */
+
 #browse{
 	margin: 40px 0;
 	font-family: raleway;
@@ -84,63 +91,12 @@ h3{
 	width: 50px;
 	display: none;
 }
----------------------------
 
-.about, .contact {
-	background-color: rgba(255, 255, 255, 0.7);
-	width: 600px;
-	margin: 0 auto;
-	padding: 30px;
-}
-.about img {
-	float: left;
-	margin: 30px; 
-	width: 300px;
-}
+/* about.php stylig */
 
-.about p {
-	color: black;
-	font-family: Raleway;
-	text-align: left;
-	font-weight: 300;
 
-}
-
-.about h2 {
-	text-align: left;
-	color: black;
-	font-weight: 300;
-	font-family: Raleway;
-}
-
-.contact img {
-	float: left;
-	margin: 30px; 
-	width: 300px;
-}
-
-.contact p {
-	color: black;
-	font-family: Raleway;
-	text-align: left;
-	font-weight: 300;
-
-}
-
-.contact h2 {
-	text-align: left;
-	color: black;
-	font-weight: 300;
-	font-family: Raleway;
-}
 
 /* Gallery */
-
-.background {
-	background-color: #FFFFFF61;
-	margin: auto;
-	width: 1100px;
-}
 
 .bild {
 	padding: 10px;
@@ -153,10 +109,14 @@ h3{
 #gallery {
 	width: 1200px;
 	text-align: center;
-	color: white;
-	font-family: Raleway;
 }
 
+#pic {
+	display: inline;
+	padding: 5px;
+}
+
+/* SQLinjections.php */
 #gallery, a {
 	font-family: Raleway;
 	text-decoration: none;
@@ -165,11 +125,6 @@ h3{
 
 #gallery, a:hover {
 	color:#f7b406;
-}
-
-#pic {
-	display: inline;
-	padding: 5px;
 }
 
 #form {
@@ -184,40 +139,14 @@ h3{
 	color: white;
 	font-family: Raleway;
 }
+/* Bar-results on bars.php */
 
-#up {
-	text-align: center;
-	color:#f7b406;
-	font-family: Raleway;
-	text-align: center;
-
-}
-
-input[type=file] {
-    padding:22px 7px; 
-    background:#f7b406; 
-    border:0;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 35px; 
-    font-size: 0px;
-    margin-top: 20px;
-}
-/*Bar-results on bars.php*/
-h3{
-	font-family: Helvetica;
-	text-align: center;
-	color: white;
-	text-transform: uppercase;
-}
 #bardiv {
 	width: 200px;
-	background-color: rgba(255, 255, 255, 1);
+	background-color: rgba(0, 0, 0, 0.4);
 	display: inline-block;
 	margin: 10px;
-	padding: 2px;
-	background: url("night.png"); 
-	background-size: 400px;
+	padding: 2px; 
 	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 #bardiv p {
