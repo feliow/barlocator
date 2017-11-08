@@ -57,7 +57,7 @@
 				    <div class='fav'><h4>Age?</h4></br>
 				    <p> $agelimit </p></br></div>
 				    </br><div class='homepage'><p><b>COOL BAR? See more info on homepage!</b></br><a href=$homepage> $homepage </a></p></div>";
-				   	echo '<div class="image"><img src="img/' . ($image) . '"></img></div></br>';
+				   	echo '<div class="image"><img src="img/BarImg/' . ($image) . '"></img></div></br>';
 				   	echo '<div class="nogood"><a href="bars.php?barID= ' . ($barID) . '">✗</a></div>';
 				    echo "</div>";
 				}
