@@ -45,8 +45,8 @@ header img {
 /* Headlines */
 
 h1 {
-	font-family: 'Anton', sans-serif;
-	font-size: 50px;
+	font-family: Helvetica;
+	font-size: 30px;
 }
 
 h3{
@@ -129,54 +129,57 @@ h3{
 
 /* Gallery */
 
-.bild {
-	padding: 10px;
-	padding-bottom: 70px;
-	margin-top: 30px;
-	background-color: white;
-		
-}
 
-#gallery {
-	width: 1200px;
-	text-align: center;
+.bild {
+	padding: 20px;
+	margin: 30px;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+
+		
 }
 
 #pic {
 	display: inline;
-	padding: 5px;
+	text-align: center;
 }
+#form{
+	background-color: rgba(0, 0, 0, 0.4);
+	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+	width: 200px;
+	height: 95px;
+	margin: 0 auto;
+}
+#form input {
+	float: left;
+	margin: 20px 0 0 5px;
+}
+/* SQLinjections.php */
 
-/* SQLinjections.php */
-/* SQLinjections.php */
-#gallery, a {
+#form, a {
 	font-family: Raleway;
 	text-decoration: none;
 	color: white;
+	margin: 0 auto; 
 }
 
-#gallery, a:hover {
+#form, a:hover {
 	color:#f7b406;
 }
 
-#form {
-	color:#f7b406;
-	text-align: center;
-	position: relative;
-
-}
-
-#login {
-	width: 320px;
-	color: white;
-	font-family: Helvetica;
-}
-#checkout {
+#login {
 	text-align: center;
 	margin: 0 auto;
+	width: 320px;
+	font-family: Helvetica;
+	color: white;
+	position: relative;
+}
+#checkout {
 	height: 80px;
 	margin-top: 50px;
 	text-transform: uppercase;
+	text-align: center;
 }
 #checkout a{
 	font-family: Helvetica;

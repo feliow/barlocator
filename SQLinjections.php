@@ -40,7 +40,6 @@ if (isset($_POST['username'], $_POST['userpass'])) {
     
 }
 ?>
-<div id="form">
 
         <div id="login" >
         <h1>LOG IN</h1>
@@ -50,4 +49,3 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             <input type="submit" value="Go" >
         </form>
         </div>
-</div>
