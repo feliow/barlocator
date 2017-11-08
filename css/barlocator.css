@@ -148,6 +148,7 @@ h3{
 }
 
 /* SQLinjections.php */
+/* SQLinjections.php */
 #gallery, a {
 	font-family: Raleway;
 	text-decoration: none;
@@ -160,15 +161,28 @@ h3{
 
 #form {
 	color:#f7b406;
-	font-family: Raleway;
 	text-align: center;
+	position: relative;
 
 }
 
 #login {
 	width: 320px;
 	color: white;
-	font-family: Raleway;
+	font-family: Helvetica;
+}
+#checkout {
+	text-align: center;
+	margin: 0 auto;
+	height: 80px;
+	margin-top: 50px;
+	text-transform: uppercase;
+}
+#checkout a{
+	font-family: Helvetica;
+}
+#checkout:hover {
+	font-size: 20px;
 }
 /* Bar-results on bars.php */
 
