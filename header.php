@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/barlocator.css">
 		<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 		<meta charset="utf-8">
 	</head>
 <header>

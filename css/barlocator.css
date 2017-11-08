@@ -26,7 +26,7 @@ header a {
 	color: white;
 	text-decoration: none;
 	text-align: center;
-	padding: 0px 30px;
+	padding-left: 30px;
 }
 header a:hover{
 	color: #f7b406;
@@ -45,8 +45,10 @@ header img {
 /* Headlines */
 
 h1 {
-	font-family: Helvetica;
+	font-family: 'Fjalla one', sans-serif;
 	font-size: 30px;
+	font-weight: bold;
+	color: #A40130;
 }
 
 h3{
@@ -55,6 +57,14 @@ h3{
 	text-align: center;
 	color: white;
 	text-transform: uppercase;
+}
+
+h2{
+	font-family: 'helvetica', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.7);
+	font-weight: lighter;
 }
 
 
@@ -287,6 +297,20 @@ header a {
 	margin-top: 20px;
 }
 
+#search input {
+	width: 400px;
+	height: 25px;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+h2 {
+	font-size: 12px;
+}
+
+
 }
 @media (max-width: 640px){
 body {
@@ -389,5 +413,18 @@ h3{
 #favdiv .nogood:hover {
 	opacity: 0.8;
 	font-size: 40px;
+}
+
+#search input {
+	width: 240px;
+	height: 25px;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 10px;
 }
 }
