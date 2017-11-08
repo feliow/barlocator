@@ -12,7 +12,7 @@ body {
 #pagecontainer{
 	text-align: center;
 }
-/* Header */
+/* ------------------ Header ------------------ */
 
 header {
 	text-align: center;
@@ -42,7 +42,7 @@ header img {
 	text-align: left;
 	position: fixed;
 }
-/* Headlines */
+/* ------------------ Headlines ------------------ */
 
 h1 {
 	font-family: 'Fjalla one', sans-serif;
@@ -68,7 +68,7 @@ h2{
 }
 
 
-/* search on index.php */
+/* ------------------ search on index.php ------------------ */
 
 #search input {
 	width: 500px;
@@ -86,7 +86,7 @@ h2{
 	margin-bottom: 100px;
 }
 
-/* search on bars.php */
+/* ------------------ search on bars.php ------------------*/
 
 #browse{
 	margin: 40px 0;
@@ -104,7 +104,7 @@ h2{
 	display: none;
 }
 
-/* about.php stylig */
+/* ------------------ about.php stylig ------------------ */
 .about {
 	color: white;
 	width: 650px;
@@ -137,7 +137,7 @@ h2{
 }
 
 
-/* Gallery */
+/* ------------------ Gallery ------------------ */
 
 
 .bild {
@@ -164,8 +164,7 @@ h2{
 	float: left;
 	margin: 20px 0 0 5px;
 }
-/* SQLinjections.php */
-
+/* ------------------ SQLinjections.php ------------------*/
 #form, a {
 	font-family: Raleway;
 	text-decoration: none;
@@ -197,7 +196,7 @@ h2{
 #checkout:hover {
 	font-size: 20px;
 }
-/* Bar-results on bars.php */
+/* ------------------ Bar-results on bars.php ------------------ */
 
 #bardiv {
 	width: 200px;
@@ -213,6 +212,7 @@ h2{
 	text-align: left;
 	margin-left: 5px;
 }
+
 #bardiv a {
 	font-size: 40px;
 }
@@ -220,7 +220,8 @@ h2{
 	opacity: 0.8;
 	font-size: 60px;
 }
-/* fav-divs on favorites.php*/
+/* ------------------ fav-divs on favorites.php---------------- */
+
 #favdiv {
 	color: white;
 	width: 650px;
@@ -268,6 +269,10 @@ h2{
 	text-align: center;
 	margin-top: 20px;
 }
+}
+
+/* -------------------------------- resonsive 800-640 px------------------------------ */
+
 @media (max-width: 800px){
 body {
 	min-width: 640px;
@@ -297,6 +302,24 @@ header a {
 	margin-top: 20px;
 }
 
+/* ------------------ about ------------------ */
+.about {
+	width: 500px;
+	margin: 20px 0 20px 0;
+}
+.about h3 {
+	font-size: 18px;
+}
+.about p {
+	font-size: 11px;
+}
+.about img{
+	width: 460px; 
+}
+
+
+/* ------------------ search ------------------ */
+
 #search input {
 	width: 400px;
 	height: 25px;
@@ -309,9 +332,11 @@ h1 {
 h2 {
 	font-size: 12px;
 }
-
-
 }
+
+
+/* -------------------------------- resonsive 640-320 px------------------------------ */
+
 @media (max-width: 640px){
 body {
 	min-width: 320px;
@@ -320,8 +345,7 @@ html {
 	min-width: 320px;
 }
 
-/* header */
-
+/* ------------------ header ------------------ */
 header {
 	height: 30px;
 	border-bottom: 1px solid white;
@@ -340,7 +364,7 @@ h3{
 	color: white;
 	text-transform: uppercase;
 }
-/* search-form on bars.php */
+/* ------------------ search-form on bars.php ------------------ */
 
 #browse{
 	font-size: 12px;
@@ -351,7 +375,7 @@ h3{
 	height: 20px;
 }
 
-/* bars-results on bars.php */
+/* ------------------ bars-results on bars.php ------------------*/
 
 #bardiv {
 	width: 180px;
@@ -373,7 +397,8 @@ h3{
 	font-family: helvetica;
 	cursor: pointer;
 }
-/* fav-results on favorites.php */
+/* ------------------ fav-results on favorites.php ------------------*/
+
 #favdiv {
 	width: 290px;
 	margin: 20px 5px;
@@ -400,6 +425,25 @@ h3{
 	float: none;
 	margin: 0;
 }
+/* ------------------ about ------------------ */
+
+.about {
+	width: 290px;
+	margin: 20px 5px;
+	float: left;
+}
+.about h3 {
+	font-size: 20px;
+}
+.about p {
+	font-size: 11px;
+}
+.about img{
+	width: 250px; 
+}
+
+/* ------------------ Homepage ------------------ */
+
 .homepage {
 	font-size: 10px;
 	float: none;
@@ -415,6 +459,7 @@ h3{
 	font-size: 40px;
 }
 
+/* ------------------ search ------------------ */
 #search input {
 	width: 240px;
 	height: 25px;

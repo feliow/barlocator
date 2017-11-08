@@ -66,7 +66,7 @@
 				}
 
 				    echo "<div id='bardiv'>";
-				    echo "<h3> $name </h3><p><b>Where?</b></br> $area </p><p><b>When?</b></br> $day </p>";
+				    echo "<h3> $name </h3><p><b>Where?</b></br> $area </p><p><b>When?</b></br> $day <br></br>Make this your favourite for more info!</p>";
 				   	echo '<a href="favorites.php?barID=' . ($barID) . '">✔</a>';
 				    echo "</div>";
 
