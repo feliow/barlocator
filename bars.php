@@ -67,8 +67,9 @@
 
 				    echo "<div id='bardiv'>";
 				    echo "<h3> $name </h3><p><b>Where?</b></br> $area </p><p><b>When?</b></br> $day </p>";
-				   	echo '<a href="favorites.php?barID= ' . ($barID) . '">✔</a>';
+				   	echo '<a href="favorites.php?barID=' . ($barID) . '">✔</a>';
 				    echo "</div>";
+
 				}
 				echo "</div>";
 			?>
@@ -78,10 +79,10 @@
 $barID = trim($_GET['barID']);
 echo '<INPUT type="hidden" name="barID" value=' . $barID . '>';
 
-$barID = trim($_GET['barID']);      // From the hidden field
-$barID = addslashes($barID);
+//$barID = trim($_GET['barID']);      // From the hidden field
+//$barID = addslashes($barID);
 
-$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+//$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
     if ($db->connect_error) {
         echo "could not connect: " . $db->connect_error;
@@ -95,7 +96,8 @@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
     $stmt = $db->prepare("UPDATE Bars SET favorite=0 WHERE barID = ?");
     $stmt->bind_param('i', $barID);
     $stmt->execute();
-    exit;
+  	header("favorites.php");
+			    
 
 ?>
 			</div>

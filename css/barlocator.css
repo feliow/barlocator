@@ -1,4 +1,5 @@
 html { 
+	min-width: 800px;
    background: url("grafitti.png") repeat center center fixed; 
 	 -webkit-background-size: repeat;
 	 -moz-background-size: repeat;
@@ -7,6 +8,7 @@ html {
 }
 body {
 	position: relative;
+	min-width: 800px;
 }
 header {
 	text-align: center;
@@ -22,20 +24,25 @@ header a {
 	text-align: center;
 	padding: 0px 30px;
 }
-
-h1 {
-	font-family: 'Anton', sans-serif;
-	font-size: 50px;
-}
-#menu a.active {
-	color: orange;
-}
-
 header a:hover{
 	color: #f7b406;
 }
 header img {
 	height: 150px;
+}
+h1 {
+	font-family: 'Anton', sans-serif;
+	font-size: 50px;
+}
+h3{
+	font-family: Helvetica;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+}
+#menu a.active {
+	color: orange;
 }
 .himg {
 	margin-top: -60px;
@@ -186,19 +193,6 @@ header img {
 
 }
 
-input[type=submit] {
-    padding:20px 18px; 
-    background:#f7b406; 
-    border:0;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 35px; 
-    font-family: Raleway;
-    font-weight: 300;
-    font-size: 15px;
-    margin-top: 20px;
-}
-
 input[type=file] {
     padding:22px 7px; 
     background:#f7b406; 
@@ -209,6 +203,13 @@ input[type=file] {
     font-size: 0px;
     margin-top: 20px;
 }
+/*Bar-results on bars.php*/
+h3{
+	font-family: Helvetica;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+}
 #bardiv {
 	width: 200px;
 	background-color: rgba(255, 255, 255, 1);
@@ -218,12 +219,6 @@ input[type=file] {
 	background: url("night.png"); 
 	background-size: 400px;
 	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
-}
-h3{
-	font-family: Helvetica;
-	text-align: center;
-	color: white;
-	text-transform: uppercase;
 }
 #bardiv p {
 	font-family: Helvetica;
@@ -238,9 +233,10 @@ h3{
 	opacity: 0.8;
 	font-size: 60px;
 }
+/* fav-divs on favorites.php*/
 #favdiv {
 	color: white;
-	width: 50%;
+	width: 650px;
 	display: inline-block;
 	margin: 20px 0;
 	padding: 2px;
@@ -280,4 +276,141 @@ h3{
 	opacity: 0.8;
 	font-size: 60px;
 }
+.image img{
+	width: 400px; 
+	text-align: center;
+	margin-top: 20px;
+}
+@media (max-width: 800px){
+body {
+	min-width: 640px;
+}
+html {
+	min-width: 640px;
+}
+header img {
+	height: 100px;
+}
+header a {
+	padding: 0px 20px;
+}
+#favdiv {
+	width: 500px;
+	margin: 0 0 20px 0;
+}
+#favdiv h3 {
+	font-size: 20px;
+}
+#favdiv h4 {
+	font-family: 10px;
+}
+.image img{
+	width: 300px; 
+	text-align: center;
+	margin-top: 20px;
+}
 
+}
+@media (max-width: 640px){
+body {
+	min-width: 320px;
+}
+html {
+	min-width: 320px;
+}
+
+/* header */
+
+header {
+	height: 30px;
+	border-bottom: 1px solid white;
+	text-align: left;
+}
+header a {
+	padding: 0px 10px;
+}
+header img {
+	display: none;
+}
+h3{
+	font-family: Helvetica;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+}
+/* search-form on bars.php */
+
+#browse{
+	font-size: 12px;
+}
+#browse input {
+	border: 2px solid black;
+	width: 150px;
+	height: 20px;
+}
+
+/* bars-results on bars.php */
+
+#bardiv {
+	width: 180px;
+	margin: 0 5px 15px 5px;
+}
+#bardiv p {
+	font-size: 12px;
+	text-align: center;
+}
+#bardiv a {
+	font-size: 25px;
+}
+#bardiv a:hover {
+	font-size: 40px;
+}
+#browse .submit{
+	display: inline;
+	border-radius: 1px;
+	font-family: helvetica;
+	cursor: pointer;
+}
+/* fav-results on favorites.php */
+#favdiv {
+	width: 290px;
+	margin: 20px 5px;
+	float: left;
+}
+#favdiv h3 {
+	font-size: 20px;
+	margin: 10px;
+}
+#favdiv h4 {
+	font-size: 12px;
+	margin: 0px;
+}
+.image img{
+	width: 250px; 
+	margin-top: 10px;
+}
+#favdiv div {
+	display: inline-block;
+	margin: 10px 10px;
+}
+.fav p{
+	font-size: 10px;
+	float: none;
+	margin: 0;
+}
+.homepage {
+	font-size: 10px;
+	float: none;
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+}
+.nogood {
+	float: right;
+	font-size: 20px;
+}
+#favdiv .nogood:hover {
+	opacity: 0.8;
+	font-size: 40px;
+}
+}
