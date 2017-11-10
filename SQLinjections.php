@@ -19,7 +19,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
 
     
     
-    $query = ("SELECT * FROM user WHERE username = '{$uname}' "."AND userpass = '{$upass}'");
+    $query = ("SELECT * FROM user WHERE username = '{$uname}' "."AND userpass = '{$upass}'"."AND name = '{$uname}'");
 
        
     
@@ -33,7 +33,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             if ($totalcount == 0) {
              echo '<h2>You got it wrong. Try again</h2>';
          } else { 
-             echo '<div id="checkout"><a href="gallery.php">Continue to the GALLERY and upload your own amazing memories! </br>⟶ </a></div>';
+            echo '<div id="checkout"><a href="gallery.php">Continue to the GALLERY and upload your own amazing memories! </br>⟶ </a></div>';
          }
             }
 
