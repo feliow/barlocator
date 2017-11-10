@@ -1,6 +1,6 @@
 html { 
 	min-width: 800px;
-   background: url("grafitti.png") repeat center center fixed; 
+   background: url("grafitti2.png") repeat center center fixed; 
 	 -webkit-background-size: repeat;
 	 -moz-background-size: repeat;
 	 -o-background-size: repeat;
@@ -116,7 +116,7 @@ h2{
 	display: inline-block;
 	margin: 20px 0;
 	padding: 2px;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.7);
 	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
 	font-family: helvetica;
 }
@@ -151,8 +151,7 @@ h2{
 	text-align: center;
 	padding: 20px;
 	margin: 20px 10px 00px 10px;
-	background-color: rgba(0, 0, 0, 0.3);
-	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 #pic {
@@ -160,8 +159,7 @@ h2{
 	text-align: center;
 }
 #form{
-	background-color: rgba(0, 0, 0, 0.4);
-	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 	width: 200px;
 	height: 95px;
 }
@@ -217,12 +215,14 @@ h2{
 /* ------------------ Bar-results on bars.php ------------------ */
 
 #bardiv {
-	width: 200px;
-	background-color: rgba(0, 0, 0, 0.4);
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.7);
 	display: inline-block;
 	margin: 10px;
-	padding: 2px; 
-	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+	padding: 5px; 
+}
+#bardiv h3 {
+	border-bottom: 1px solid white;
 }
 #bardiv p {
 	font-family: Helvetica;
@@ -233,16 +233,18 @@ h2{
 
 #bardiv a {
 	font-size: 40px;
+	text-align: right;
 }
 #bardiv a:hover {
 	opacity: 0.8;
-	font-size: 60px;
+	font-size: 50px;
 }
 #bardiv .favtext {
-	font-size: 12px;
+	font-size: 10px;
 	text-align: center;
-	color: #c83b7d;
-	font-style: italic;
+	color: white;
+	margin: 0 10px 10px 0;
+	text-align: right;
 }
 /* ------------------ fav-divs on favorites.php---------------- */
 
@@ -252,8 +254,7 @@ h2{
 	display: inline-block;
 	margin: 20px 0;
 	padding: 2px;
-	background: rgba(0, 0, 0, 0.3);
-	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+	background: rgba(0, 0, 0, 0.7);
 	font-family: helvetica;
 }
 #favdiv h3 {
@@ -292,6 +293,9 @@ h2{
 	width: 400px; 
 	text-align: center;
 	margin-top: 20px;
+}
+#bardiv .image img  {
+	width: 200px;
 }
 }
 
@@ -402,8 +406,8 @@ h3{
 /* ------------------ bars-results on bars.php ------------------*/
 
 #bardiv {
-	width: 180px;
-	margin: 0 5px 15px 5px;
+	width: 200px;
+	margin: 0 auto;
 }
 #bardiv p {
 	font-size: 12px;
@@ -464,6 +468,7 @@ h3{
 }
 .about img{
 	width: 250px; 
+	margin-left: 20px;
 }
 
 /* ------------------ Homepage ------------------ */

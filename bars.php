@@ -39,7 +39,7 @@
 				    exit();
 				}
 
-				$query = "SELECT b.barID, name, area, day, favorite
+				$query = "SELECT b.barID, name, area, day, favorite, image
 	            FROM Location AS l, Bars AS b, BLO AS blo
 	            WHERE b.barID = blo.barID AND blo.locationID = l.locationID";
 				if ($barname && !$location) { // name search only
@@ -53,7 +53,7 @@
 				}
 
 				$stmt = $db->prepare($query);
-				$stmt->bind_result($barID, $name, $area, $day, $favorite);
+				$stmt->bind_result($barID, $name, $area, $day, $favorite, $image);
 				$stmt->execute();
 				echo '<div>';
 				while ($stmt->fetch()) {
@@ -66,14 +66,15 @@
 				}
 
 				    echo "<div id='bardiv'>";
-				    echo "<h3> $name </h3><p><b>Where?</b></br> $area </p><p><b>When?</b></br> $day </p>";
-				   	echo '<a href="favorites.php?barID=' . ($barID) . '">✔</a><p class="favtext">Make this your FAVORITE and get more cool INFO!</p>';
+				    echo "<h3> $name </h3>";
+				   	echo '<div class="image"><img src="img/BarImg/' . ($image) . '"></img></div></br>';
+				   	echo '<p class="favtext"><a href="favorites.php?barID=' . ($barID) . '">✔</a></br>MORE INFO!</p>';
 				    echo "</div>";
 
 				}
 				echo "</div>";
 			?>
-<?php
+			<?php
 
 
 $barID = trim($_GET['barID']);
@@ -100,6 +101,7 @@ echo '<INPUT type="hidden" name="barID" value=' . $barID . '>';
 			    
 
 ?>
+
 			</div>
 
 
