@@ -4,7 +4,7 @@
 <div id="pagecontainer">
 <?php
 
-$db = new mysqli('localhost', 'root', 'root', 'barlocator');
+$db = new mysqli('localhost', 'root', '', 'barlocator');
 
 if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;
@@ -19,7 +19,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
 
     
     
-    $query = ("SELECT * FROM user WHERE username = '{$uname}' "."AND userpass = '{$upass}'"."AND name = '{$uname}'");
+    $query = ("SELECT * FROM user WHERE username = '{$uname}' "."AND userpass = '{$upass}'");
 
        
     

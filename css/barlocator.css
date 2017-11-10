@@ -43,6 +43,14 @@ header img {
 	text-align: left;
 	position: fixed;
 }
+
+#burger{
+	display: none;
+}
+
+#mySidenav {
+	display: none;
+}
 /* ------------------ Headlines ------------------ */
 
 h1 {
@@ -376,22 +384,33 @@ html {
 /* ------------------ header ------------------ */
 header {
 	height: 30px;
-	border-bottom: 1px solid white;
-	text-align: left;
+
+
 }
 header a {
-	padding: 0px 10px;
+	display: none;
 }
 header img {
 	display: none;
 }
+
 h3{
-	font-family: Helvetica;
-	font-size: 16px;
-	text-align: center;
-	color: white;
-	text-transform: uppercase;
+	display: none;
 }
+#burger{
+	display: block;
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: -30px;
+    margin-left: 20px;
+    float: left;
+    color: white;
+}
+
+#mySidenav {
+	display: inline;
+}
+
 /* ------------------ search-form on bars.php ------------------ */
 
 #browse{
