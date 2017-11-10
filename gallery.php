@@ -9,7 +9,7 @@
                    </form>                 
                </div>
 
-</div>
+
 
 
 <?php
@@ -73,4 +73,4 @@ if (isset($_FILES['upload'])){
        ?>
 
 
-
+</div>

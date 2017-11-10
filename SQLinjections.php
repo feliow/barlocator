@@ -4,7 +4,7 @@
 
 <?php
 
-$db = new mysqli('localhost', 'root', '', 'barlocator');
+$db = new mysqli('localhost', 'root', 'root', 'barlocator');
 
 if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;
@@ -33,7 +33,7 @@ if (isset($_POST['username'], $_POST['userpass'])) {
             if ($totalcount == 0) {
              echo '<h2>You got it wrong. Try again</h2>';
          } else { 
-             echo '<div id="checkout"><a href="gallery.php">Check out the gallery and upload your own beautiful pitures!</a></div>';
+             echo '<div id="checkout"><a href="gallery.php">Continue to the GALLERY and upload your own amazing memories! </br>⟶ </a></div>';
          }
             }
 
@@ -41,8 +41,10 @@ if (isset($_POST['username'], $_POST['userpass'])) {
 }
 ?>
 
+        
+        <h3>LOG IN</h3>
+        <hr>
         <div id="login" >
-        <h1>LOG IN</h1>
         <form method="POST" action="">
             <input type="text" name="username">
             <input type="password" name="userpass"></br></br>
