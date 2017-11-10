@@ -1,10 +1,10 @@
 
 <?php include("header.php"); ?>
 <?php include("config.php"); ?>
-
+<div id="pagecontainer">
 <?php
 
-$db = new mysqli('localhost', 'root', '', 'barlocator');
+$db = new mysqli('localhost', 'root', 'root', 'barlocator');
 
 if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;
@@ -45,9 +45,24 @@ if (isset($_POST['username'], $_POST['userpass'])) {
         <h3>LOG IN</h3>
         <hr>
         <div id="login" >
-        <form method="POST" action="">
-            <input type="text" name="username">
-            <input type="password" name="userpass"></br></br>
-            <input type="submit" value="Go" ><a href="adduser.php">don't have an account?</a>
-        </form>
-        </div>
+
+        <form action="SQLinjections.php" method="POST">
+    <table cellpadding="6">
+        <tbody>
+            <tr>
+                <td>Username:</td>
+                <td><INPUT type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><INPUT type="password" name="userpass"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><INPUT type="submit" value="Go!"> <a href="adduser.php">Don't have an account?</a></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
+</div>
