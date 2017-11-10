@@ -3,7 +3,7 @@ include("config.php");
 $title = "Add new User";
 include("header.php");
 ?>
-
+<div id="pagecontainer">
 <?php
 if (isset($_POST['newuser'])) {
 
@@ -42,7 +42,8 @@ if (isset($_POST['newuser'])) {
 
 <h3>Sign Up</h3>
 <hr>
-<form id="adduser" action="adduser.php" method="POST">
+<div id="adduser">
+<form action="adduser.php" method="POST">
     <table cellpadding="6">
         <tbody>
             <tr>
@@ -55,8 +56,10 @@ if (isset($_POST['newuser'])) {
             </tr>
             <tr>
                 <td></td>
-                <td><INPUT type="submit" name="submit" value="Add User"></td>
+                <td><INPUT type="submit" name="submit" value="Go!"></td>
             </tr>
         </tbody>
     </table>
 </form>
+</div>
+</div>
