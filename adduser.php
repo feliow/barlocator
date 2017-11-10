@@ -6,11 +6,10 @@ include("header.php");
 
 <?php
 if (isset($_POST['newuser'])) {
-    // This is the postback so add the book to the database
-    # Get data from form
+
     $newuser = trim($_POST['newuser']);
-    $newpass = trim($_POST['newpass']);
-    $newpassHash = password_hash($newpass, PASSWORD_DEFAULT);
+    $newpass = sha1($_POST['newpass']);
+
     if (!$newuser || !$newpass) {
         printf("You must specify both a username and an password");
         printf("<br><a href=index.php>Return to home page </a>");
@@ -43,9 +42,8 @@ if (isset($_POST['newuser'])) {
 
 <h3>Sign Up</h3>
 <hr>
-You must enter both a title and an author and other stuff you have in the database....
-<form action="adduser.php" method="POST">
-    <table bgcolor="#ddd" cellpadding="6">
+<form id="adduser" action="adduser.php" method="POST">
+    <table cellpadding="6">
         <tbody>
             <tr>
                 <td>Username:</td>
