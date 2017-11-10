@@ -6,16 +6,17 @@ include("header.php");
 
 <?php
 if (isset($_POST['newuser'])) {
-
+    $newname = trim($_POST['newname']);
     $newuser = trim($_POST['newuser']);
     $newpass = sha1($_POST['newpass']);
 
-    if (!$newuser || !$newpass) {
+    if (!$newuser || !$newpass || !$newname) {
         printf("You must specify both a username and an password");
         printf("<br><a href=index.php>Return to home page </a>");
         exit();
     }
 
+    $newname = addslashes($newuser);
     $newuser = addslashes($newuser);
     $newpass = addslashes($newpass);
 
@@ -29,8 +30,8 @@ if (isset($_POST['newuser'])) {
     }
 
     // Prepare an insert statement and execute it
-    $stmt = $db->prepare("insert into user (username, userpass) values (?, ?)");
-    $stmt->bind_param('ss', $newuser, $newpass);
+    $stmt = $db->prepare("insert into user (name, username, userpass) values (?, ?, ?)");
+    $stmt->bind_param('sss', $newname, $newuser, $newpass);
     $stmt->execute();
     printf("<br>User Added!");
     printf("<br><a href=gallery.php>Watch gallery</a>");
@@ -45,6 +46,10 @@ if (isset($_POST['newuser'])) {
 <form id="adduser" action="adduser.php" method="POST">
     <table cellpadding="6">
         <tbody>
+            <tr>
+                <td>Name:</td>
+                <td><INPUT type="text" name="newname"></td>
+            </tr>
             <tr>
                 <td>Username:</td>
                 <td><INPUT type="text" name="newuser"></td>

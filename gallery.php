@@ -37,6 +37,8 @@ if (isset($_FILES['upload'])){
                    if (isset($error)){
                        if (empty($error)){
                            echo '<a href="uploadedfiles/' . $_FILES['upload']['name'] . '">';
+                           $date_of_expiry = time() + 60 ;
+                            setcookie( "delete", $_FILES, $date_of_expiry );
                            
                        } else {
                            #else, if there was an error, then it simply goes through the error array
