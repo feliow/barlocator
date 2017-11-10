@@ -269,6 +269,26 @@ h2{
 	text-align: center;
 	margin-top: 20px;
 }
+
+/* ------------------ add user on favorites.php---------------- */
+
+#adduser {
+	width: 300px;
+	margin-top: 0 auto;
+	padding: 30px;
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.5);
+	font-family: helvetica;
+	text-align: center;
+}
+
+#adduser, a {
+	font-size: 10px;
+	margin-left: 8px;
+}
+
+#adduser, td {
+		color: white;
 }
 
 /* -------------------------------- resonsive 800-640 px------------------------------ */
