@@ -4,7 +4,7 @@
 
 <?php
 
-$db = new mysqli('localhost', 'root', 'root', 'barlocator');
+$db = new mysqli('localhost', 'root', '', 'barlocator');
 
 if ($db->connect_error) {
     echo "could not connect: " . $db->connect_error;
@@ -48,6 +48,6 @@ if (isset($_POST['username'], $_POST['userpass'])) {
         <form method="POST" action="">
             <input type="text" name="username">
             <input type="password" name="userpass"></br></br>
-            <input type="submit" value="Go" >
+            <input type="submit" value="Go" ><a href="adduser.php">don't have an account?</a>
         </form>
         </div>
